@@ -17,12 +17,14 @@ appointmentsRouter.post('/',(request,response)=>{
     if(findAppointmentInSameDate){
         return response.status(400).json({message:"This appointment is already booked!"})
     }
-    
+
     const appointment = new Appointment(provider,parsedDate);
     appointments.push(appointment);
     return response.json(appointment);
 });
+
 appointmentsRouter.get('/',(request,response)=>{
     return response.json({message:'Hello World!'})
 });
+
 export default appointmentsRouter;
