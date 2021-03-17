@@ -23,7 +23,8 @@ appointmentsRouter.post('/',(request,response)=>{
 });
 
 appointmentsRouter.get('/',(request,response)=>{
-    return response.json({message:'Hello World!'})
+    const appointments = appointmentsRepository.all();
+    return response.json({appointments});
 });
 
 export default appointmentsRouter;
