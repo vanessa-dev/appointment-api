@@ -1,0 +1,8 @@
+{
+    "type":"postgres",
+    "host":"localhost",
+    "port":5432,
+    "username":"seu user",
+    "password":"sua senha",
+    "database":"nome do seu banco de dados"
+}
