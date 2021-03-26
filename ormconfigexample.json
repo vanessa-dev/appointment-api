@@ -4,5 +4,10 @@
     "port":5432,
     "username":"seu user",
     "password":"sua senha",
-    "database":"nome do seu banco de dados"
+    "database":"nome do seu banco de dados",
+    "migrations":[
+        "./src/database/migrations/*.ts"
+    ],"cli":{
+        "migrationsDir":"./src/database/migrations"
+    }
 }
