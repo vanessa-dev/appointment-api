@@ -5,6 +5,9 @@
     "username":"seu user",
     "password":"sua senha",
     "database":"nome do seu banco de dados",
+    "entities":[
+        "./src/models/*.ts"
+    ],
     "migrations":[
         "./src/database/migrations/*.ts"
     ],"cli":{
