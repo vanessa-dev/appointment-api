@@ -12,11 +12,14 @@ class User{
 
     @Column()
     password: string;
+
+    @Column()
+    avatar: string;
     
     @CreateDateColumn()
-    created_at:Date;
+    created_at: Date;
 
     @UpdateDateColumn()
-    updated_at:Date;
+    updated_at: Date;
 }
 export default User;
