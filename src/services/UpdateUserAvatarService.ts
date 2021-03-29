@@ -10,13 +10,14 @@ interface Request{
 }
 
 class UppdateUserAvatarService{
-    public async execute({user_id,avatarFilename}: Request  ): Promise<User | undefined> {
+    public async execute({user_id,avatarFilename}: Request  ): Promise<User> {
         const userRepository = getRepository(User);
 
         const user = await userRepository.findOne(user_id);
         if(!user){
             throw new Error('only Authenticated users can change avatar');
         }
+        
         if(user.avatar){
           //Deletar avatar anterior
           const userAvatarFilePath =  path.join(uploadConfig.directory,user.avatar);
@@ -25,13 +26,13 @@ class UppdateUserAvatarService{
           if(userAvatarFileExists){
             await fs.promises.unlink(userAvatarFilePath);
           }
-
-          user.avatar = avatarFilename;
-
-          await userRepository.save(user);
-
-          return user;
         }
+
+        user.avatar = avatarFilename;
+
+        await userRepository.save(user);
+
+        return user;
     }
 }
 export default UppdateUserAvatarService;
