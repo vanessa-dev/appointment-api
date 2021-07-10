@@ -17,7 +17,7 @@
 
 8. Rode o comando **yarn dev:server**
 
-OBS: Antes de executar o passo 8 sempre verificar se o seu container postgres esta startado.
+> OBS Antes de executar o passo 8 sempre verificar se o seu container postgres esta startado.
 
 Repósitorio do front-end da aplicação: https://github.com/vanessa-dev/gobarber-web
 
